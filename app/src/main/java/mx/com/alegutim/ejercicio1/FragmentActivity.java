@@ -9,13 +9,14 @@ import mx.com.alegutim.ejercicio1.fragment.FragmentLista;
 import mx.com.alegutim.ejercicio1.fragment.FragmentPerfil;
 
 public class FragmentActivity extends AppCompatActivity implements View.OnClickListener {
-
+    String usuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment);
-        findViewById(R.id.fragment_perfil).setOnClickListener(this);
-        findViewById(R.id.fragmentHolder).setOnClickListener(this);
+         usuario = getIntent().getExtras().getString("key_user");
+        findViewById(R.id.btnperfil).setOnClickListener(this);
+        findViewById(R.id.btnlista).setOnClickListener(this);
 
     }
 
@@ -33,8 +34,10 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void showPerfil() {
+        FragmentPerfil f = FragmentPerfil.newInstance(usuario);
+        getFragmentManager().beginTransaction().replace(R.id.fragment_perfil,f).commit();
 
-        getFragmentManager().beginTransaction().replace(R.id.fragment_perfil,new FragmentPerfil()).commit();
+
     }
 
     private void showList() {

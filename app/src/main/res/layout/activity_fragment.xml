@@ -28,13 +28,11 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <fragment
+        <FrameLayout
             android:id="@+id/fragment_perfil"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout="@layout/fragment_perfil"
-            android:name="mx.com.alegutim.ejercicio1.fragment.FragmentPerfil" />
+            android:layout_height="match_parent" ></FrameLayout>
         <FrameLayout
             android:layout_weight="1"
             android:id="@+id/fragmentHolder"

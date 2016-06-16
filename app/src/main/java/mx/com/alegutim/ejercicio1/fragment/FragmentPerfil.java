@@ -38,7 +38,33 @@ public class FragmentPerfil extends Fragment {
             user = "XML inflate";
         }
         textUsuario.setText(user);
+        imgPerfil.setImageResource( buscaInicial(user)?R.drawable.ic_action_spellcheck:R.drawable.ic_maps_local_parking);
         return view;
+    }
+
+    public Boolean buscaInicial(String usuario){
+        Boolean result = false ;
+
+        String[] primerparte = new String[12];
+        primerparte[0]="a";
+        primerparte[1]="b";
+        primerparte[2]="c";
+        primerparte[3]="d";
+        primerparte[4]="e";
+        primerparte[5]="f";
+        primerparte[6]="g";
+        primerparte[7]="h";
+        primerparte[8]="i";
+        primerparte[9]="j";
+        primerparte[10]="k";
+        primerparte[11]="m";
+
+        for (int x=0; x<primerparte.length-1; x++){
+            if(primerparte[x].toString().equals(usuario.substring(0,1))) {
+            result = true;
+            }
+        }
+        return  result;
     }
 
 
