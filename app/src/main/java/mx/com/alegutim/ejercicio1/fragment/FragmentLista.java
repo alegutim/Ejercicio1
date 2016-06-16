@@ -1,6 +1,7 @@
 package mx.com.alegutim.ejercicio1.fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import mx.com.alegutim.ejercicio1.DetalleActivity;
+import mx.com.alegutim.ejercicio1.FragmentActivity;
 import mx.com.alegutim.ejercicio1.R;
 import mx.com.alegutim.ejercicio1.adapters.AdapterItemList;
 import mx.com.alegutim.ejercicio1.model.Elemento;
@@ -42,6 +45,7 @@ public class FragmentLista extends Fragment implements View.OnClickListener {
                 Elemento modelItem = adapter.getItem(position);
                 Elemento modelItem2 = array.get(position);
                 Toast.makeText(getActivity(),modelItem2.item,Toast.LENGTH_SHORT).show();
+                trueAcces(modelItem2.id, modelItem2.item , modelItem2.imagen_id);
             }
         });
 
@@ -69,6 +73,15 @@ public class FragmentLista extends Fragment implements View.OnClickListener {
 
                 break;
         }
+    }
+
+    private void trueAcces(String titulo, String Detalle , int Imagen)
+    {
+        Intent intent =new  Intent(getActivity(),DetalleActivity.class);
+        intent.putExtra("key_titulo",Detalle);
+        intent.putExtra("key_detalle",titulo);
+        intent.putExtra("key_imagen",Imagen);
+        startActivity(intent);
     }
 
 }
