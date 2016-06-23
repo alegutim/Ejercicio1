@@ -9,13 +9,15 @@
         android:layout_height="wrap_content">
 
         <EditText
+            android:layout_marginTop="20dp"
             android:layout_weight="0.3"
             android:id="@+id/mItemText"
             android:hint="Item text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
-            android:text="Add"
+            android:layout_marginTop="20dp"
+            android:text="@string/lista_agregar"
             android:layout_weight="0.7"
             android:id="@+id/btnAddItem"
             android:layout_width="match_parent"

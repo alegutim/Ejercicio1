@@ -37,10 +37,10 @@ public class FragmentLista extends Fragment implements View.OnClickListener {
     private List<Elemento> array = new ArrayList<>()    ;
     private int counter;
     private EditText mItemText;
-    private Boolean IsTrue = true;
+    private Boolean IsTrue = false;
     private ItemDataSource itemDataSource;
     private TextView textUsuario;
-    Resources res = getResources();
+    private Resources res ;
 
 
     @Override
@@ -51,56 +51,53 @@ public class FragmentLista extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_lista,container,false);
+        View view = inflater.inflate(R.layout.fragment_lista, container, false);
         listView = (ListView) view.findViewById(R.id.ltsView);
         mItemText = (EditText) view.findViewById(R.id.mItemText);
-        textUsuario  = (TextView) view.findViewById(R.id.textUsuario);
-        view.findViewById(R.id.btnAddItem).setOnClickListener(this);
+        textUsuario = (TextView) view.findViewById(R.id.textUsuario);
+        res = getResources();
         List<Elemento> modelItemList = itemDataSource.getAllItems(Ejercicio1.USUARIO);
         listView.setAdapter(new AdapterItemList(getActivity(), modelItemList));
-        if (modelItemList.size()>0) {
-            IsTrue = !(modelItemList.size() % 2 == 0);
-            counter = modelItemList.size();
+        IsTrue = !(modelItemList.size() % 2 == 0);
+        counter = modelItemList.size()+1;
 
-            // muestra actividad
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    AdapterItemList adapter = (AdapterItemList) parent.getAdapter();
-                    Elemento modelItem = adapter.getItem(position);
-                    trueAcces(modelItem.description, modelItem.item, modelItem.imagen_id);
-                }
-            });
+        // muestra actividad
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                AdapterItemList adapter = (AdapterItemList) parent.getAdapter();
+                Elemento modelItem = adapter.getItem(position);
+                trueAcces(modelItem.description, modelItem.item, modelItem.imagen_id);
+            }
+        });
 
-            // Borrar elemento
-            listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-                @Override
-                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                    AdapterItemList adapter = (AdapterItemList) parent.getAdapter();
-                    final Elemento modelItem = adapter.getItem(position);
+        // Borrar elemento
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                AdapterItemList adapter = (AdapterItemList) parent.getAdapter();
+                final Elemento modelItem = adapter.getItem(position);
 
-                    new AlertDialog.Builder(getActivity())
-                            .setTitle(R.string.delete_title)
-                            .setMessage(String.format( res.getString(R.string.delete_inner_text) ,  modelItem.item))
-                            .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    itemDataSource.deleteItem(modelItem);
-                                    listView.setAdapter(new AdapterItemList(getActivity(),itemDataSource.getAllItems(Ejercicio1.USUARIO)));
-                                }
-                            })
-                            .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
+                new AlertDialog.Builder(getActivity())
+                        .setTitle(R.string.delete_title)
+                        .setMessage(String.format(res.getString(R.string.delete_inner_text), modelItem.item))
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                itemDataSource.deleteItem(modelItem);
+                                listView.setAdapter(new AdapterItemList(getActivity(), itemDataSource.getAllItems(Ejercicio1.USUARIO)));
+                            }
+                        })
+                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
 
-                                }
-                            }).setCancelable(false).create().show();
-                    return true;
-                }
-            });
-
-
-        }
+                            }
+                        }).setCancelable(false).create().show();
+                return true;
+            }
+        });
+        view.findViewById(R.id.btnAddItem).setOnClickListener(this);
         return view;
     }
 

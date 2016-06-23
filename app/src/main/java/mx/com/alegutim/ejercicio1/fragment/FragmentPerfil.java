@@ -9,12 +9,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import mx.com.alegutim.ejercicio1.R;
 
 /**
  * Created by Administrator on 16/06/2016.
  */
 public class FragmentPerfil extends Fragment {
+    private final String url_1 = "http://www.sipsych.org/files/5113/8287/6561/Male_User.png";
+    private final String url_2 = "http://itsae.edu.ec/img/foto_defecto/femaleicon.png";
     ImageView imgPerfil;
     public static FragmentPerfil newInstance(String name , String ultConexion)
     {
@@ -44,7 +48,8 @@ public class FragmentPerfil extends Fragment {
         }
         textUsuario.setText(user);
         textUltConexion.setText(ult_conexion);
-        imgPerfil.setImageResource( buscaInicial(user)?R.drawable.ic_action_spellcheck:R.drawable.ic_maps_local_parking);
+        //imgPerfil.setImageResource( buscaInicial(user)?R.drawable.ic_action_spellcheck:R.drawable.ic_maps_local_parking);
+        Picasso.with(getActivity()).load(buscaInicial(user)?url_1:url_2).into(imgPerfil);
         return view;
     }
 

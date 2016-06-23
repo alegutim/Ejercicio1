@@ -8,7 +8,6 @@
     <string name="delete_inner_text">¿Desea borrar el elemento  %s?</string>
     <string name="text_descripcion">Description:</string>
     <string name="detalle_titulo">Titulo:</string>
-    <string name="detalle_descripcion">Descripcion:</string>
     <string name="fragment_cerrarSesion">Cerrar sesion</string>
     <string name="fragment_mostrarPerfil">Mostrar Perfil</string>
     <string name="fragment_mostrarLista">Mostrar lista</string>
@@ -16,5 +15,6 @@
     <string name="main_registro">Registro</string>
     <string name="main_login">Login</string>
     <string name="registro_registraUsuario">Registra usuario.</string>
-    <string name="perfil_ult_conexion">Ultima conexion:</string>
+    <string name="perfil_ult_conexion">Ultima conexion: </string>
+    <string name="lista_agregar">Agregar</string>
 </resources>
