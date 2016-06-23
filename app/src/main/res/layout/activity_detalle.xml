@@ -18,7 +18,7 @@
         android:id="@+id/det_tit"
         android:layout_weight="1"
         android:textSize="50sp"
-        android:hint="Titulo"
+        android:hint="@string/detalle_titulo"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </TextView>
@@ -26,7 +26,7 @@
         android:id="@+id/det_desc"
         android:layout_weight="1"
         android:textSize="25sp"
-        android:hint="Descripcion"
+        android:hint="@string/detalle_descripcion"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

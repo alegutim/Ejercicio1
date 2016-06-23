@@ -21,7 +21,7 @@
     <TextView
         android:gravity="right"
         android:layout_weight="1"
-        android:text="Ultima conexion: "
+        android:text="@string/perfil_ult_conexion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView

@@ -30,7 +30,7 @@
         android:layout_marginTop="20dp"
         android:layout_below="@id/activity_relative_pass"
         android:id="@+id/chkRememberMe"
-        android:text="Recuerda credenciales."
+        android:text="@string/main_recuerdaCredenciales"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <LinearLayout
@@ -42,14 +42,14 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registro"
+            android:text="@string/main_registro"
             android:layout_weight="1"
             android:id="@+id/activity_relative_btnregister"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/main_login"
             android:layout_weight="1"
             android:id="@+id/activity_relative_btnlogin"/>
     </LinearLayout>

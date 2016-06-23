@@ -10,7 +10,7 @@
         <Button
             android:layout_weight="1"
             android:id="@+id/btncSesion"
-            android:text="Cerrar sesion"
+            android:text="@string/fragment_cerrarSesion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
@@ -29,13 +29,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:text="Mostrar Perfil"
+            android:text="@string/fragment_mostrarPerfil"
             android:layout_weight="1"
             android:id="@+id/btnperfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
-            android:text="Mostrar lista"
+            android:text="@string/fragment_mostrarLista"
             android:layout_weight="1"
             android:id="@+id/btnlista"
             android:layout_width="match_parent"

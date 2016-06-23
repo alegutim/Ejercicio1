@@ -40,6 +40,7 @@ public class FragmentLista extends Fragment implements View.OnClickListener {
     private Boolean IsTrue = true;
     private ItemDataSource itemDataSource;
     private TextView textUsuario;
+    Resources res = getResources();
 
 
     @Override
@@ -77,7 +78,7 @@ public class FragmentLista extends Fragment implements View.OnClickListener {
                 public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                     AdapterItemList adapter = (AdapterItemList) parent.getAdapter();
                     final Elemento modelItem = adapter.getItem(position);
-                    Resources res = getResources();
+
                     new AlertDialog.Builder(getActivity())
                             .setTitle(R.string.delete_title)
                             .setMessage(String.format( res.getString(R.string.delete_inner_text) ,  modelItem.item))
@@ -113,7 +114,7 @@ public class FragmentLista extends Fragment implements View.OnClickListener {
                 if (!TextUtils.isEmpty(itemData)){
                     Elemento item = new Elemento();
                     item.item= itemData;
-                    item.description = "Description: " + counter;
+                    item.description = res.getString(R.string.text_descripcion) + counter;
                     item.imagen_id = IsTrue ? R.drawable.ic_action_spellcheck:R.drawable.ic_maps_local_parking;
                     item.usuario=Ejercicio1.USUARIO;
                     Log.d(Ejercicio1.TAG,Ejercicio1.USUARIO);
