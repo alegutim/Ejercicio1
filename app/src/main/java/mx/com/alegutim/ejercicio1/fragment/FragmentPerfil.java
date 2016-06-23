@@ -16,11 +16,12 @@ import mx.com.alegutim.ejercicio1.R;
  */
 public class FragmentPerfil extends Fragment {
     ImageView imgPerfil;
-    public static FragmentPerfil newInstance(String name)
+    public static FragmentPerfil newInstance(String name , String ultConexion)
     {
         FragmentPerfil f = new FragmentPerfil();
         Bundle b = new Bundle();
         b.putString("key_user", name);
+        b.putString("key_ult_conexion", ultConexion);
         f.setArguments(b);
         return f;
 
@@ -30,14 +31,19 @@ public class FragmentPerfil extends Fragment {
         View view = inflater.inflate(R.layout.fragment_perfil,container,false);
         imgPerfil = (ImageView)view.findViewById(R.id.imgPerfil);
         TextView textUsuario  = (TextView) view.findViewById(R.id.textUsuario);
+        TextView textUltConexion  = (TextView) view.findViewById(R.id.textUltConexion);
         String user;
+        String ult_conexion;
         Bundle bundle = getArguments();
         if ( bundle!=null) {
             user = bundle.getString("key_user");
+            ult_conexion = bundle.getString("key_ult_conexion");
         }else{
             user = "XML inflate";
+            ult_conexion = "XML inflate";
         }
         textUsuario.setText(user);
+        textUltConexion.setText(ult_conexion);
         imgPerfil.setImageResource( buscaInicial(user)?R.drawable.ic_action_spellcheck:R.drawable.ic_maps_local_parking);
         return view;
     }

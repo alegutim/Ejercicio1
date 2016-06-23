@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".FragmentActivity" />
-        <activity android:name=".DetalleActivity"></activity>
+        <activity android:name=".DetalleActivity" />
+        <activity android:name=".ActivityRegistro"></activity>
     </application>
 
 </manifest>

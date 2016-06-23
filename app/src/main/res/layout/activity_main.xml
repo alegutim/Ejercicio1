@@ -26,16 +26,25 @@
         android:layout_below="@id/activity_relative_user"
         android:inputType="textPassword"
         android:maxLength="8"/>
+    <CheckBox
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/activity_relative_pass"
+        android:id="@+id/chkRememberMe"
+        android:text="Recuerda credenciales."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
-        <Space
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:text="Registro"
+            android:layout_weight="1"
+            android:id="@+id/activity_relative_btnregister"/>
 
         <Button
             android:layout_width="match_parent"
