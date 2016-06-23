@@ -31,7 +31,7 @@ public class AdapterItemList extends ArrayAdapter<Elemento> {
         ImageView img = (ImageView) convertView.findViewById(R.id.aleatory_image);
         Elemento modelitem = getItem(position);
         txtTitle.setText(modelitem.item);
-        txtItemDescription.setText(modelitem.id);
+        txtItemDescription.setText(modelitem.description);
         img.setImageResource(modelitem.imagen_id);
         return convertView;
     }

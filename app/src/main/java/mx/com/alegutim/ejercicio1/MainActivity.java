@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         modelUsuario.ultConexion=new SimpleDateFormat("dd/MM/yyyy HH:mm:ss ").format(new Date());
         usuarioDataSource.saveUtlConexion(modelUsuario);
         startActivity(intent);
+        Ejercicio1.USUARIO = modelUsuario.usuario;
         finish();
     }
 }
