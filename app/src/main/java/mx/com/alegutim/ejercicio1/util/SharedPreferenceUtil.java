@@ -24,5 +24,14 @@ public class SharedPreferenceUtil {
         return id_user;
     }
 
+    public void saveTimeSession (int id){
+        sp.edit().putString("timer_session",String.valueOf(id)).apply();
+    }
+
+    public int getTimeSession (){
+        int id_user = Integer.parseInt(sp.getString("timer_session","-1"));
+        return id_user;
+    }
+
 
 }

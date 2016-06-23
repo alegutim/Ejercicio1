@@ -18,6 +18,7 @@
         <activity android:name=".FragmentActivity" />
         <activity android:name=".DetalleActivity" />
         <activity android:name=".ActivityRegistro"></activity>
+        <service android:name=".service.ServiceTimer"></service>
     </application>
 
 </manifest>

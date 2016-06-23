@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import mx.com.alegutim.ejercicio1.model.Usuario;
+import mx.com.alegutim.ejercicio1.service.ServiceTimer;
 import mx.com.alegutim.ejercicio1.sql.UsuarioDataSource;
 import mx.com.alegutim.ejercicio1.util.SharedPreferenceUtil;
 
